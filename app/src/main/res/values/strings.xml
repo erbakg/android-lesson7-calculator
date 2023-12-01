@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">calculator</string>
+    <string name="screen1_get_result">Get result</string>
+    <string name="screen2_category">Category</string>
+    <string name="screen2_card_text">Explore the nightlife of your \n city</string>
+    <string name="screen2_card_free">Free</string>
+    <string name="screen2_card_price">Price💰</string>
+    <string name="screen2_participants">Participants</string>
+    <string name="screen2_accessibility">Accessibility</string>
+    <string name="screen2_blue_btn_text">Next</string>
+    <string-array name="types">
+        <item>Type</item>
+        <item>Type 1</item>
+        <item>Type 2</item>
+    </string-array>
+    <string-array name="rangeSliderValues">
+        <item>30</item>
+        <item>80</item>
+    </string-array>
 </resources>

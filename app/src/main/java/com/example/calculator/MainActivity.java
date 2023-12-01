@@ -2,9 +2,11 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Operations operator;
 
+    private Button getResultBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = findViewById(R.id.text_view);
+        getResultBtn = findViewById(R.id.get_result_btn);
+
+        getResultBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Second_screen.class);
+            intent.putExtra("result", textView.getText().toString());
+            startActivity(intent);
+        });
     }
 
     public void onNumberClick(View view) {
@@ -38,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClearClick(View view) {
         textView.setText("0");
     }
+
 
     public void onOperationClick(View view) {
         if (view instanceof MaterialButton) {
@@ -68,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                     result = result.toString().replaceAll("\\.?0*$", ""); // Remove decimal point and trailing zeros
                 }
                 textView.setText(result);
+                textView.setVisibility(View.GONE);
+                getResultBtn.setVisibility(View.VISIBLE);
 
             } else if (!textView.getText().toString().equals("0")) {
                 firstOperand = textView.getText().toString();

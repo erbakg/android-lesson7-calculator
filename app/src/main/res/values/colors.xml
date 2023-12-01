@@ -5,4 +5,8 @@
     <color name="gray">#A5A5A5</color>
     <color name="dark_gray">#333333</color>
     <color name="orange">#FE9E0A</color>
+    <color name="background">#28323B</color>
+    <color name="main_color">#DC366A</color>
+    <color name="blue">#4687F0</color>
+    <color name="violet">#693BFD</color>
 </resources>
